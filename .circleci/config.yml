@@ -3,8 +3,8 @@ jobs:
   build:
     working_directory: ~/repo
     docker:
-      - image: yarnpkg/dev:latest
       - image: circleci/openjdk:8-jdk
+      - image: yarnpkg/dev:latest
     steps:
       - checkout
       - run:
