@@ -4,8 +4,13 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: yarnpkg/dev:latest
+      - image: circleci/openjdk:8-jdk
     steps:
       - checkout
       - run:
           name: check yarn version
           command: yarn --version
+      - run:
+          name: check java version
+          command: java --version
+      
