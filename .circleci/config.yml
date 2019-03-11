@@ -5,16 +5,12 @@ jobs:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - restore_cache:
-          name: Restore Yarn Package Cache
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Install Dependencies
-          command: yarn install
-      - save_cache:
-          name: Save Yarn Package Cache
-          key: yarn-packages-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
+         command: |
+            echo "Checking yarn and npm..."
+            mkdir test
+            node --version
+            npm -version
+            yarn -version
       - run: echo "A first hello"
