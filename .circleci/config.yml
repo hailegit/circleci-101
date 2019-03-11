@@ -12,8 +12,11 @@ jobs:
             sudo apt install curl
             curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
             sudo apt install nodejs
-            sudo apt-get install yarn
+            sudo apt install yarn
       - run:
           name: check yarn version
-          command: yarn --version
+          command: |
+            yarn --version
+            node --version
+            npm --version
       
