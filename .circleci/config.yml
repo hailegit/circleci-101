@@ -4,11 +4,9 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: circleci/openjdk:8-jdk
+      - image: yarnpkg/dev:latest
     steps:
       - checkout
-      - run:
-          name: install yarn
-          command: 'sudo apt-get update && sudo apt-get install yarn'
       - run:
           name: check yarn version
           command: yarn --version
