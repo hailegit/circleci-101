@@ -9,6 +9,7 @@ jobs:
       - run:
           name: install yarn
           command: |
+            sudo apt update
             sudo apt install curl
             curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
             sudo apt install nodejs
