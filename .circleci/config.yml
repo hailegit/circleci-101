@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Install Dependencies
-         command: |
+          command: |
             echo "Checking yarn and npm..."
             mkdir test
             node --version
